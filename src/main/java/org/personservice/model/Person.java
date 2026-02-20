@@ -1,9 +1,6 @@
 package org.personservice.model;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -15,6 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "person")
+@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person  implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

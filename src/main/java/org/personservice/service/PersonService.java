@@ -1,8 +1,7 @@
 package org.personservice.service;
 
-import org.personservice.dto.AddressDto;
-import org.personservice.dto.CityPopulationDto;
-import org.personservice.dto.PersonDto;
+import org.personservice.dto.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,4 +15,6 @@ public interface PersonService {
     Iterable<PersonDto> getPersonsByName(String name);
     PersonDto updatePersonAddress(Integer id, AddressDto addressDto);
     Iterable<CityPopulationDto> getCityPopulation();
+    Iterable<ChildDto> findAllChildren();
+    Iterable<EmploeeDto> getEmploeesBySalary(Integer from, Integer to);
 }

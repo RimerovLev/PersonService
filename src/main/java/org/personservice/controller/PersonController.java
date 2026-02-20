@@ -2,9 +2,7 @@ package org.personservice.controller;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.personservice.dto.AddressDto;
-import org.personservice.dto.CityPopulationDto;
-import org.personservice.dto.PersonDto;
+import org.personservice.dto.*;
 import org.personservice.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,5 +57,15 @@ public class PersonController {
     @GetMapping("/population/city")
     public Iterable<CityPopulationDto> getCityPopulation() {
         return personService.getCityPopulation();
+    }
+
+    @GetMapping("/children")
+    public Iterable<ChildDto> getAllChildren() {
+        return personService.findAllChildren();
+    }
+
+    @GetMapping("/salary/{from}/{to}")
+    public Iterable<EmploeeDto> getEmploeesBySalary(@PathVariable Integer from, @PathVariable Integer to) {
+        return personService.getEmploeesBySalary(from, to);
     }
 }
