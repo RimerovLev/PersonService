@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "person")
-@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance( strategy = InheritanceType.JOINED)
 public class Person  implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

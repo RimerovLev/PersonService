@@ -9,9 +9,4 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ChildDto extends PersonDto{
     String school;
-
-    public ChildDto(Integer id, String name, LocalDate birthDate, AddressDto address, String school) {
-        super(id, name, birthDate, address);
-        this.school = school;
-    }
 }
